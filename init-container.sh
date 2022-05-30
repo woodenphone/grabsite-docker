@@ -4,16 +4,15 @@
 ## USAGE: $ sudo ./init-container.sh
 echo "#[${0##*/}]" "Starting"
 
-mkdir -vp "$PWD/cmd" "$PWD/download"
-
+mkdir -vp "$PWD/dl"
+rm -v "$PWD/grabsite.cid"
 sudo docker run \
     --cidfile "$PWD/grabsite.cid" \
-    --mount "type=bind,src=$PWD/download,dst=/grabsite/download" \
-    --mount "type=bind,src=$PWD/cmd,dst=/grabsite/cmd" \
-    --expose "127.0.0.1:29000" \
+    --mount "type=bind,src=$PWD/dl,dst=/grabsite/dl" \
+    --expose "29000" \
     --label "name=grabsite" \
-    --name "grabsite"
-    --restart "always"
+    --name "grabsite" \
+    --restart "always" \
     --tty \
     "grab-site"
 

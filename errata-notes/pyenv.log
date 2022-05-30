@@ -1,0 +1,26 @@
+2022-05-25 10:52:23 (12.6 MB/s) - 'pyenv-installer' saved [1839/1839] 
+ 
+mode of 'pyenv-installer' changed from 0644 (rw-r--r--) to 0755 (rwxr-xr-x) 
+Cloning into '/home/grabsite/.pyenv'... 
+Cloning into '/home/grabsite/.pyenv/plugins/pyenv-doctor'... 
+Cloning into '/home/grabsite/.pyenv/plugins/pyenv-installer'... 
+Cloning into '/home/grabsite/.pyenv/plugins/pyenv-update'... 
+Cloning into '/home/grabsite/.pyenv/plugins/pyenv-virtualenv'... 
+Cloning into '/home/grabsite/.pyenv/plugins/pyenv-which-ext'... 
+ 
+WARNING: seems you still have not added 'pyenv' to the load path. 
+ 
+# Load pyenv automatically by appending 
+# the following to 
+~/.bash_profile if it exists, otherwise ~/.profile (for login shells) 
+and ~/.bashrc (for interactive shells) : 
+ export PYENV_ROOT="$HOME/.pyenv" 
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH" eval "$(pyenv init -)" 
+ # Restart your shell for the changes to take effect. 
+ # Load pyenv-virtualenv automatically by adding 
+# the following to ~/.bashrc: 
+eval "$(pyenv virtualenv-init -)" 
+Downloading Python-3.8.13.tar.xz... 
+-> https://www.python.org/ftp/python/3.8.13/Python-3.8.13.tar.xz 
+Installing Python-3.8.13... 
+Installed Python-3.8.13 to /home/grabsite/.pyenv/versions/3.8.13 

@@ -50,4 +50,7 @@ Accessing the files from your job:
 ls -lahQF "download"
 ```
 
-##
+## Layout
+`grabsite-image/` - Files needed for creating image.
+
+
