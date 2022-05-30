@@ -7,7 +7,7 @@ cmdfile="/grabsite/cmd/$(date +%s).sh"
 
 ## Run in tmux to ensure grabsite client process remains alive until it completes.
 ## $ docker exec [OPTIONS] CONTAINER COMMAND [ARG...]
-sudo docker exec --user 1000:1000 --workdir "/grabsite/download" "${CONTAINER}" tmux new-window << GS_EOF
+sudo docker exec --user 1000:1000 --workdir "/grabsite/dl" "${CONTAINER}" tmux new-window << GS_EOF
 grab-site --which-wpull-command $@ | tee "${cmdfile}"
 chmod +x "${cmdfile}"
 "${cmdfile}"

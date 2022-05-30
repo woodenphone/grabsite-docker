@@ -8,7 +8,7 @@ mkdir -vp "$PWD/dl"
 rm -v "$PWD/grabsite.cid"
 sudo docker run \
     --cidfile "$PWD/grabsite.cid" \
-    --mount "type=bind,src=$PWD/dl,dst=/grabsite/dl" \
+    --mount "$PWD/dl:/grabsite/dl" \
     --expose "29000" \
     --label "name=grabsite" \
     --name "grabsite" \

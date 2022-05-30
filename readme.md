@@ -47,7 +47,7 @@ $ sudo ./gs.sh GRAB_SITE_ARGS...
 
 Accessing the files from your job:
 ```
-ls -lahQF "download"
+ls -lahQF "dl"
 ```
 
 ## Layout

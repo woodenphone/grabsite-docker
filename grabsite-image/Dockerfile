@@ -25,26 +25,26 @@ COPY --chown=1000:1000 "gs-install.sh" "/grabsite/gs-install.sh"
 # Assign ownership and permissions:
 RUN chown -vR '1000:1000' '/grabsite' \
     && chmod -vR 'u=rwX,g=rwX,o=rX' '/grabsite' \
-    && chmod -v  'u=rwx,g=rwx,o=r' "/grabsite/gs-install.sh" \
-    && ls -lahFQn "/" "/grabsite"
+    && chmod -v  'u=rwx,g=rwx,o=r' "/grabsite/gs-install.sh"
 
 USER 1000:1000
 # Perform non-root grab-site install:
 RUN "/grabsite/gs-install.sh"
 ## -- < Slow expensive stuff is now done > --
+USER 0:0
 
-COPY --chown=1000:1000 "entrypoint.sh" "/grabsite/entrypoint.sh"
+COPY --chown=0:0 "entrypoint.sh" "/grabsite/entrypoint.sh"
+COPY --chown=0:0 "ep-setup.sh" "/grabsite/ep-setup.sh"
+COPY --chown=0:0 "ep-application.sh" "/grabsite/ep-application.sh"
 COPY --chown=1000:1000 "pause_resume_grab_sites.sh" "/grabsite/pause_resume_grab_sites.sh"
 
-# Assign ownership and permissions:
-RUN chown -vR '1000:1000' '/grabsite' \
-    && chmod -vR 'u=rwX,g=rwX,o=rX' '/grabsite' \
-    && chmod -v  'u=rwx,g=rwx,o=r' /grabsite/*.sh \
-    && ls -lahFQn "/" "/grabsite"
+## Assign ownership and permissions:
+RUN  chmod -v  'u=rwx,g=rwx,o=r' /grabsite/*.sh
 
-WORKDIR "/grabsite/download"
+
+WORKDIR "/grabsite/dl"
 ENTRYPOINT [ "/grabsite/entrypoint.sh" ]
-VOLUME "/grabsite/download"
+VOLUME "/grabsite/dl"
 # VOLUME "/grabsite/cmd/"
 EXPOSE "29000"
 LABEL description="grab-site"
