@@ -46,5 +46,5 @@ WORKDIR "/grabsite/dl"
 ENTRYPOINT [ "/grabsite/entrypoint.sh" ]
 VOLUME "/grabsite/dl"
 # VOLUME "/grabsite/cmd/"
-EXPOSE "29000"
-LABEL description="grab-site"
+#EXPOSE "29000"
+LABEL description="grabsite-user"
