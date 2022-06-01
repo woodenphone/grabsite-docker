@@ -85,6 +85,18 @@ $ sudo docker run -ti --entrypoint /bin/bash IMAGE_NAME_HERE
 $ sudo docker run -ti --entrypoint /bin/bash grab-site
 ```
 
+```
+$ sudo docker exec -ti --entrypoint /bin/bash grab-site
+```
+
+comfy ls
+```
+ls -lahnQZF
+```
+```
+alias ll='ls -lahnQZF'
+```
+
 ## Tips and tricks
 
 

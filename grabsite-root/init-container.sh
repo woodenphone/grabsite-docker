@@ -8,7 +8,7 @@ mkdir -vp "$PWD/dl"
 rm -v "$PWD/grabsite.cid"
 sudo docker run \
     --cidfile "$PWD/grabsite.cid" \
-    --volume "$(pwd)/dl:/grabsite/dl:z" \
+    --volume "$PWD/dl:/grabsite/dl:z" \
     --expose "29000" \
     --label "name=grabsite" \
     --name "grabsite-root" \
@@ -21,3 +21,4 @@ exit
 ##=====< Notes >=====##
 ## https://docs.docker.com/engine/reference/commandline/run/
 ## https://docs.docker.com/engine/reference/commandline/service_create/#add-bind-mounts-volumes-or-memory-filesystems
+## -v <source>:<destination>:<options>
