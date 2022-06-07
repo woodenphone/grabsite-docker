@@ -149,6 +149,9 @@ Links / sources / references / reading / etc.
 
 [docker-compose reference](https://docs.docker.com/compose/compose-file/)
 
+[Tagging images with gitcommit id](https://blog.scottlowe.org/2017/11/08/how-tag-docker-images-git-commit-information/)
+
+[Common tag names](https://github.com/opencontainers/image-spec/blob/main/annotations.md)
 
 ### Shell scripting
 [bash cheatsheet](https://devhints.io/bash)

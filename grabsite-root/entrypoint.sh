@@ -14,7 +14,7 @@ echo "#[${0##*/}]" "Setup dirs"
 mkdir -vp '/grabsite' '/grabsite/dl' '/grabsite/dl/wip' '/grabsite/dl/done' '/grabsite/cmd'
 ## Permissions for dirs:
 chown -vR '1000:1000' '/grabsite' '/grabsite/dl' '/grabsite/dl/wip' '/grabsite/dl/done' '/grabsite/cmd'
-chmod -v 'u=rwX,g=rwX,o=rwX' '/grabsite' '/grabsite/dl' '/grabsite/dl/wip' '/grabsite/dl/done' '/grabsite/cmd'
+chmod -v 'a=rwX' '/grabsite' '/grabsite/dl' '/grabsite/dl/wip' '/grabsite/dl/done' '/grabsite/cmd'
 
 echo "#[${0##*/}]" "Setup scripts"
 chmod -v 'u+x,g+x' /grabsite/*.sh
